@@ -1,14 +1,28 @@
-import { View, Text, ImageBackground } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
+import { Text, View } from "react-native";
 import styles from "./styles";
-import { Images } from "../../assets";
-import { CommonStyles } from "../../utility";
-const Splash = () => {
+import { Icons } from "../../assets";
+import { UtilityMethods } from "../../utility";
+import Routes from "../../navigation/Routes";
+const Splash = ({navigation}) => {
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.replace(Routes.AUTH_STACK);
+    }, 3000);
+  }
+  , []);
+
   return (
     <View
-      style={CommonStyles.CommonStyles}
+      style={styles.cont}
       
-    ></View>
+    >
+    <Icons.SplashIcon width={UtilityMethods.wp(100)} height={UtilityMethods.hp(30)}/> 
+    <Text style={styles.titleText}>
+      Here App Io 
+    </Text>
+    </View>
   );
 };
 

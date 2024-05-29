@@ -6,7 +6,7 @@ const Colors = {
   PRIMARY_01: "rgba(58, 106, 255, 1)",
   TransParentBackground: "rgba(0, 0, 0, 0.29)",
   TransParentBackground1: "rgba(0, 0, 0, 0.5)",
-  PRIMARY: "#3A6AFF",
+  PRIMARY: "#eb6648",
   SECONDARY: "#C8E3FF",
   SECONDARY1: "#8DA9FF",
   RED: "#F54949",

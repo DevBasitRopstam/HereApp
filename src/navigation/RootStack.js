@@ -11,7 +11,10 @@ const RootStack = () => {
 
   return (
     <Stack.Navigator
-    
+     screenOptions={{
+      headerShown: false,
+      
+     }}
     
     >
       <Stack.Screen name={Routes.SPLASH} component={Splash} />

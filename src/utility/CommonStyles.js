@@ -30,24 +30,23 @@ const CommonStyles = StyleSheet.create({
     fontFamily: Fonts.MEDIUM,
   },
   REGULAR: {
-    fontWeight: Platform.OS == "ios" ? "400" : null,
+   
     fontFamily: Fonts.REGULAR,
   },
   REGULAR_TEXT: {
-    fontWeight: Platform.OS == "ios" ? "400" : null,
+ 
     fontFamily: Fonts.REGULAR,
     fontSize: FontSize.VALUE(16),
     color: Colors.BLACK,
   },
   BOLD_TEXT: {
-    fontWeight: Platform.OS == "ios" ? "800" : null,
+   
     fontFamily: Fonts.BOLD,
     fontSize: FontSize.VALUE(18),
     color: Colors.BLACK,
   },
   MEDIUM_TEXT: {
-    fontWeight: Platform.OS == "ios" ? "500" : null,
-    fontFamily: Fonts.MEDIUM,
+   fontFamily: Fonts.MEDIUM,
     fontSize: FontSize.VALUE(14),
     color: Colors.BLACK,
   },

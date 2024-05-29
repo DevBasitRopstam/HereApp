@@ -6,30 +6,32 @@ const { StyleSheet, Platform } = require('react-native');
 const styles = StyleSheet.create({
   mainCont: {
     width: '100%',
+    marginTop: UtilityMethods.hp(2),
   },
   container: (isInValidField) => ({
     margin: 0,
-    paddingHorizontal: UtilityMethods.wp(1),
-    borderBottomWidth: isInValidField ? 1 : 0,
-    borderBottomColor: Colors.RED,
-    borderRadius: 8,
+    paddingHorizontal: UtilityMethods.wp(3),
+   borderWidth: 1,
+    borderRadius: 20,
     backgroundColor: 'white',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height: UtilityMethods.hp(4.5),
-    marginTop: UtilityMethods.hp(1.5),
-    paddingBottom: UtilityMethods.hp(0.5),
+    height: UtilityMethods.hp(6),
+
+    // marginTop: UtilityMethods.hp(1.5),
+    // paddingBottom: UtilityMethods.hp(0.5),
   }),
   input: {
     padding: 0,
     margin: 0,
     width: '100%',
     color: Colors.DARK_GRAY,
-    fontSize: FontSize.VALUE(30),
+    fontSize: FontSize.VALUE(20),
     ...CommonStyles.MEDIUM,
     textAlignVertical: 'center',
-    height: UtilityMethods.hp(20),
+    height: UtilityMethods.hp(6),
+    
   },
   eyeIcon: {
     width: UtilityMethods.wp(6),

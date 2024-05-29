@@ -16,12 +16,17 @@ export const ScreenWrapper = ({
 }) => {
   return (
     // <KeyboardAwareScrollView style={{flex: 1}} contentOffset={{x:10,y:20}}>
-    <KeyboardAvoidingView
+    <KeyboardAwareScrollView
       style={[styles.containerMain, style]}
-      behavior={Platform.OS === "ios" ? "padding" : req ? "height" : null}
+      keyboardShouldPersistTaps="handled"q
+      contentContainerStyle={{ flexGrow: 1 }}
+      enableOnAndroid={true}
+      enableAutomaticScroll={true}
+      
+      
     >
       {children}
-    </KeyboardAvoidingView>
+    </KeyboardAwareScrollView>
   );
 };
 

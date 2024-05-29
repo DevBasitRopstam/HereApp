@@ -44,7 +44,7 @@ export const Button = ({
 }) => {
   return (
     <TouchableOpacity
-      style={[styles.mainContainer(disabled), style]}
+      style={[styles.mainContainer, style]}
       activeOpacity={0.7}
       disabled={disabled}
       onPress={onPress}

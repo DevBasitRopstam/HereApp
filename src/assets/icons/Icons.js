@@ -1,6 +1,9 @@
+import SplashIcon from "./Splash.svg";
+import Login from "./Login.svg";
 
-
-const Icons = {
+export default Icons = {
+    SplashIcon: SplashIcon,
+    Login: Login,
 }
 
-export default Icons;
+

@@ -51,81 +51,20 @@ export const CustomizedInput = ({
   const inputRef = useRef(null);
   const navigation = useNavigation();
   const [show, setShow] = useState(false);
-  const [flag, setFlag] = useState('🇺🇸');
-  const onSelect = (country) => {};
-  useFocusEffect(
-    useCallback(() => {
-      if (FirstScreen) {
-        setTimeout(() => {
-          inputRef?.current?.focus();
-        }, 500);
-      } else {
-        inputRef?.current?.focus();
-      }
-    }, []),
-  );
+
+
+ 
   return (
     <View style={[styles.mainCont, style]}>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'baseline',
-        }}
-      >
-        {show && (
-          <View style={{ position: 'absolute', zIndex: -99, left: -9000 }}>
-           
-          </View>
-        )}
-        <Text style={[inputWithBorder ? styles.TitleTextWithBorder : styles.TitleStyle, titleStyle]}>{props?.title}</Text>
-        {optional && (
-          <Text
-            style={{
-              color: 'gray',
-            }}
-          >
-            {' '}
-            (optional)
-          </Text>
-        )}
-      </View>
+      {props?.title && (
+        <Text style={[styles.TitleStyle, titleStyle]}>{props?.title}</Text>
+      )}
       <View
         style={{
           height: props?.title ? UtilityMethods.hp(1) : null,
         }}
       />
-      {inputWithBorder ? (
-        <>
-          {!TextArea ? (
-            <View style={[styles.inputWithBorder, inputContStyle]}>
-              <View style={styles.iconView}>
-                <View style={styles.roundCount}>
-                  <Image source={iconSource} style={[styles.roundIcon, iconStyle]} />
-                </View>
-              </View>
-              <TextInput
-                style={styles.textInputView}
-                value={props?.value}
-                onChangeText={props?.onChangeText}
-                placeholder={props?.placeholder}
-                placeholderTextColor={Colors.DARK_GRAY}
-                keyboardType={keyboardType}
-              />
-            </View>
-          ) : (
-            <TextInput
-              style={styles.inputWithBorderTextArea}
-              value={props?.value}
-              onChangeText={props?.onChangeText}
-              placeholder={props?.placeholder}
-              placeholderTextColor={Colors.DARK_GRAY}
-              multiline={true}
-              numberOfLines={4}
-            />
-          )}
-        </>
-      ) : (
-        <View style={[styles.container(isInValidField), InputContStyle]}>
+    <View style={[styles.container(isInValidField), InputContStyle]}>
           {LeftIcon && (
             <>
               <LeftIcon width={UtilityMethods.hp(15)} height={UtilityMethods.hp(15)} />
@@ -209,7 +148,7 @@ export const CustomizedInput = ({
             </TouchableOpacity>
           )}
         </View>
-      )}
+     
       {Error?.length > 0 ? <Text style={styles.ErrorText}>{Error}</Text> : null}
     </View>
   );
