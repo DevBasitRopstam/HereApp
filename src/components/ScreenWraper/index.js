@@ -22,6 +22,8 @@ export const ScreenWrapper = ({
       contentContainerStyle={{ flexGrow: 1 }}
       enableOnAndroid={true}
       enableAutomaticScroll={true}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
       
       
     >

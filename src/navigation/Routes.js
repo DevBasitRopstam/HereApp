@@ -5,7 +5,9 @@ const Routes = {
   DASHBOARD_STACK:"DashboardStack",
   SPLASH:"Splash",
   LOGIN:"Login",
+  SIGNUP:"SignUp",
   HOME:"Home",
+  ATTENDANCE:"Attendance",
 
   
 };

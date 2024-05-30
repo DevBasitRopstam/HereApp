@@ -6,12 +6,6 @@ import { UtilityMethods } from "../../utility";
 import Routes from "../../navigation/Routes";
 const Splash = ({navigation}) => {
 
-  useEffect(() => {
-    setTimeout(() => {
-      navigation.replace(Routes.AUTH_STACK);
-    }, 3000);
-  }
-  , []);
 
   return (
     <View

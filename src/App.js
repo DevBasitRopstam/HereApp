@@ -11,7 +11,7 @@ import store, { persister } from './redux/Store';
 import { StatusBar } from 'react-native';
 
 //================================ Local Imported Files ======================================//
-import { LocationProvider } from './contexts';
+
 import RootStack from './navigation/RootStack';
 
 export const navigationRef = createNavigationContainerRef();
@@ -29,7 +29,7 @@ const App = () => {
    
   >
     <Provider store={store}>
-      <LocationProvider>
+    
         <PersistGate persistor={persister}>
           <NavigationContainer  ref={navigationRef}>
             <GestureHandlerRootView style={{ flex: 1 }}>
@@ -39,7 +39,7 @@ const App = () => {
             </GestureHandlerRootView>
           </NavigationContainer>
         </PersistGate>
-      </LocationProvider>
+    
     </Provider>
   </ToastProvider>
   );
