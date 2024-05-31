@@ -5,7 +5,7 @@ import { CommonStyles, FontSize } from '../../utility'
 
 
 const CountdownTimer = ({ setonCounterFinished }) => {
-  const [seconds, setSeconds] = useState(10)
+  const [seconds, setSeconds] = useState(180)
   
 
   useEffect(() => {
