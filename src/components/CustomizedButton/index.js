@@ -32,7 +32,7 @@ const returnNormalView = (text, textStyle, Icon, customButton, disabled) => {
     </>
   );
 };
-export const Button = ({
+ const Button = ({
   style,
   text,
   textStyle,
@@ -56,3 +56,5 @@ export const Button = ({
     </TouchableOpacity>
   );
 };
+
+export default Button;

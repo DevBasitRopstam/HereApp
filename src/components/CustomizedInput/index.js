@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
-
+import { Dropdown } from 'react-native-element-dropdown';
+import MaterailIcon from 'react-native-vector-icons/AntDesign';
 import { Image, Pressable, TextInput, TouchableOpacity, View, Text } from 'react-native';
 import { Colors, Icons, Images } from '../../assets';
 import styles from './styles';
@@ -19,7 +20,7 @@ export const InputTypes = {
 };
 
 
-export const CustomizedInput = ({
+ const CustomizedInput = ({
   type,
   LeftIcon,
   RightIcon,
@@ -101,17 +102,29 @@ export const CustomizedInput = ({
 
           <View style={{ flex: 1 }}>
             {type == InputTypes.PICKER ? (
-              <Pressable style={{ width: UtilityMethods.wp(90) }} onPress={onPress}>
-                <Text
-                  style={{
-                    color: props?.value?.length ? Colors.BLACK : Colors.PLACEHOLDER_COLOR,
-                    fontSize: FontSize.VALUE(16),
-                    ...CommonStyles.MEDIUM,
-                  }}
-                >
-                  {props?.value?.length ? props?.value : props?.placeholder}
-                </Text>
-              </Pressable>
+              <Dropdown
+                placeholder={props?.placeholder}
+                data={props?.data?props?.data:[]}
+                maxHeight={300}
+                value={props?.value}
+                onChange={props?.onChangeText}
+                style={[styles.input, inputStyle,]}
+                inputStyle={{ color: Colors.BLACK }}
+                placeholderStyle={{ color: Colors.DARK_GRAY }}
+                // containerStyle={{ width: '100%' }}
+                // dropdownStyle={{ width: '100%' }}
+                // dropDownContainerStyle={{ width: '100%' }}
+                labelField={"label"}
+                valueField={"value"}
+                renderRightIcon={() => (
+                  <MaterailIcon
+                    name="down"
+                    size={20}
+                    color={Colors.BLACK}
+                  />
+                )
+                }
+                />
             ) : (
               <TextInput
                 ref={inputRef}
@@ -120,7 +133,7 @@ export const CustomizedInput = ({
                 secureTextEntry={type === InputTypes.PASSWORD && showPassword}
                 keyboardType={type === InputTypes.EMAIL ? 'email-address' : keyboardType}
                 placeholderTextColor={Colors.PLACEHOLDERTEXTCOLOR}
-                numberOfLines={1}
+                numberOfLines={props?.numberOfLines ? props?.numberOfLines : 1}
                 maxLength={maxLength ? maxLength : 40}
                 autoCapitalize={InputTypes.EMAIL ? 'none' : props?.autoCapitalize}
                 {...props}
@@ -159,3 +172,5 @@ CustomizedInput.propTypes = {
   LeftIcon: PropTypes.element,
   style: PropTypes.object,
 };
+
+export default CustomizedInput;

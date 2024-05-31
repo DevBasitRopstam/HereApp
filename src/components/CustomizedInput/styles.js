@@ -6,7 +6,7 @@ const { StyleSheet, Platform } = require('react-native');
 const styles = StyleSheet.create({
   mainCont: {
     width: '100%',
-    marginTop: UtilityMethods.hp(2),
+   
   },
   container: (isInValidField) => ({
     margin: 0,
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     ...CommonStyles.MEDIUM,
     textAlignVertical: 'center',
     height: UtilityMethods.hp(6),
+    textAlignVertical:"top",
     
   },
   eyeIcon: {

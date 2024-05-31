@@ -7,7 +7,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-export const ScreenWrapper = ({
+ const ScreenWrapper = ({
   children,
   style,
   model = false,
@@ -41,3 +41,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+export default ScreenWrapper;

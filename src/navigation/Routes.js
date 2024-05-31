@@ -8,6 +8,8 @@ const Routes = {
   SIGNUP:"SignUp",
   HOME:"Home",
   ATTENDANCE:"Attendance",
+  EDIT_PROFILE:"EditProfile",
+  EXCUSE_ATTENDANCE:"ExcuseAttandence",
 
   
 };

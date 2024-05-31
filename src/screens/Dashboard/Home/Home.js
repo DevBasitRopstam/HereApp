@@ -25,6 +25,23 @@ const Home = ({navigation}) => {
       style={styles.button}
 
       />
+      <Button 
+      text={"Edit Profile"}
+      onPress={()=>{
+        navigation.navigate(Routes.EDIT_PROFILE)
+      }}
+      style={styles.button}
+
+      />
+       <Button 
+      text={"Excuse Attendance"}
+      onPress={()=>{
+        navigation.navigate(Routes.EXCUSE_ATTENDANCE)
+      }}
+      style={styles.button}
+
+      />
+   
    
     </View>
   );

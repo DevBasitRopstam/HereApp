@@ -27,9 +27,7 @@ const CountdownTimer = ({ setonCounterFinished }) => {
     if (seconds === 0) {
       setonCounterFinished(true)
       // Countdown has reached 0, do something here (e.g., show an alert)
-      // You can also navigate to another screen or perform any other action
-      
-      // Add your desired action here
+     
     }
   }, [seconds])
 

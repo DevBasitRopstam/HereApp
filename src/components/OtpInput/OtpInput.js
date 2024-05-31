@@ -9,7 +9,8 @@ const { wp, hp } = UtilityMethods;
 const OtpInput = ({ numOfDigits = 4, onComplete }) => {
     const [digits, setDigits] = useState(Array(numOfDigits).fill(''));
     const inputRefs = useRef(digits.map(() => React.createRef()));
-
+    
+/// Handle change text ///
     const handleChangeText = (text, index) => {
         const newDigits = [...digits];
         newDigits[index] = text;
@@ -25,7 +26,7 @@ const OtpInput = ({ numOfDigits = 4, onComplete }) => {
             onComplete(newDigits.join(''));
         }
     };
-
+  /// Handle backspace /// 
     const handleKeyPress = (e, index) => {
         if (e.nativeEvent.key === 'Backspace' && !digits[index] && index > 0) {
             inputRefs.current[index - 1].current.focus();

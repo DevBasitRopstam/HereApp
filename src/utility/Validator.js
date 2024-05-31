@@ -1,7 +1,7 @@
 export const Validator = (type, value, confirmPasswordValue = "") => {
   switch (type) {
     case "password":
-      if (value.length <= 5) {
+      if (value?.length <= 5) {
         return "Password must be at least 6 characters";
       }
       return "";
@@ -16,8 +16,9 @@ export const Validator = (type, value, confirmPasswordValue = "") => {
 
     case "confirmPassword":
       if (value != confirmPasswordValue) {
-        return "errors.invalidConfirmPassword";
+        return "Password does not match";
       }
+      return "";
     case "name":
       if (!value.match(/^[a-zA-Z\s]*$/)) {
         return "Name should only contain letters and spaces";

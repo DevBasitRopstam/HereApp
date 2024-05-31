@@ -3,7 +3,7 @@ import React from "react";
 import UtilityMethods from "../../utility/UtilityMethods";
 import { FlatList } from "react-native-gesture-handler";
 
-export const CustomFlatList = ({
+ const CustomFlatList = ({
   item,
   data,
   renderItem,
@@ -44,3 +44,5 @@ export const CustomFlatList = ({
     />
   );
 };
+
+export default CustomFlatList;

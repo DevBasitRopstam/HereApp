@@ -9,6 +9,8 @@ import SignUp from "./Auth/SignUp/SignUp";
 
  import Home from "./Dashboard/Home/Home";
  import Attendance from "./Dashboard/Attendence/Attendence";
+ import EditProfile from "./Dashboard/EditProfile/EditProfile";
+ import ExcuseAttandence from "./Dashboard/ExcuseAttandenc/ExcuseAttandence";
 
 
 export {
@@ -16,6 +18,9 @@ export {
   Home,
   Login,
   SignUp,
-  Attendance
+  Attendance,
+  EditProfile,
+  ExcuseAttandence
+  
 
 };

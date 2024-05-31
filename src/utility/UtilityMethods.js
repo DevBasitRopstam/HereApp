@@ -1,11 +1,12 @@
 import { CommonActions } from '@react-navigation/native';
-import { Alert, Dimensions, PixelRatio, Platform, Share } from 'react-native';
+import { Alert, Dimensions, Linking, PixelRatio, Platform, Share } from 'react-native';
 
 import { navigationRef } from '../App';
 import ImagePicker from 'react-native-image-crop-picker';
 import moment from 'moment';
 import Geolocation from '@react-native-community/geolocation';
 import AlertService from '../services/AlertService';
+import { AlertWithTwoButtons } from '../components';
 
 let screenWidth = Dimensions.get('window').width;
 let screenHeight = Dimensions.get('window').height;
@@ -282,6 +283,7 @@ class UtilityMethodsClass {
   }
 
   selectImage = (selectType, callback, multiple) => {
+ 
     if (selectType === 'camera') {
       ImagePicker.openCamera({
         cropping: true,
@@ -293,7 +295,22 @@ class UtilityMethodsClass {
         // width: 300,
       }).then((image) => {
         callback(image);
-      });
+      }).catch((error) => {
+
+          AlertWithTwoButtons({
+            title: 'Permission Denied',
+            subtitle: 'Please allow camera permission from settings',
+            btnTitleFirst: 'Cancel',
+            btnTitleSecond: 'Open Settings',
+            onPressButtonFirst: () => { },
+            onPressButtonSecond: () => { 
+              Linking.openSettings();
+            }
+
+          })
+        
+      }
+      );
     } else {
       ImagePicker.openPicker({
         multiple: multiple,
@@ -306,7 +323,21 @@ class UtilityMethodsClass {
         // width: 300,
       }).then((images) => {
         callback(images);
-      });
+      }).catch((error) => {
+       
+          AlertWithTwoButtons({
+            title: 'Permission Denied',
+            subtitle: 'Please allow gallery permission from settings',
+            btnTitleFirst: 'Cancel',
+            btnTitleSecond: 'Open Settings',
+            onPressButtonFirst: () => { },
+            onPressButtonSecond: () => { 
+              Linking.openSettings();
+            }
+
+          })
+      }
+      );
     }
   };
 

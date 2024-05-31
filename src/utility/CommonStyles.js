@@ -62,6 +62,7 @@ const CommonStyles = StyleSheet.create({
   },
   ROW_VIEW: {
     flexDirection: "row",
+    alignItems: "center",
   },
   ModalHandle: {
     width: UtilityMethods.wp(10),
