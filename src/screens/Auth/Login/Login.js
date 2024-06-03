@@ -71,7 +71,9 @@ const Login = ({navigation}) => {
 
   return (
     <View style={styles.cont}>
-     <ScreenWrapper>
+     <ScreenWrapper
+     
+     >
      <View style={{alignSelf:"center"}} >
     <Icons.Login width={UtilityMethods.wp(80)}
      height={UtilityMethods.wp(70)}
@@ -79,7 +81,7 @@ const Login = ({navigation}) => {
 
     </View>
 
-    
+    <View style={styles.body}>
     <CustomizedInput
    
      type={"email"}
@@ -105,10 +107,11 @@ const Login = ({navigation}) => {
      <Button
       text={"Login"}
       onPress={() => onPressLogin()}
-      style={{marginTop:UtilityMethods.hp(2)}}
+   
 
 
     />
+    </View>
 
      <View style={[CommonStyles.ROW_VIEW,styles.linkView]}>
       <Text style={styles.linkText}>Don't have an account?</Text>
