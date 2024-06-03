@@ -18,6 +18,15 @@ const Home = ({navigation}) => {
       </Text>
 
       <Button 
+      text={"Logout"}
+      onPress={()=>{
+        dispatch(setUser(null))
+      }}
+      style={styles.button}
+
+      />
+
+      <Button 
       text={"Mark Attendance"}
       onPress={()=>{
         navigation.navigate(Routes.ATTENDANCE)
@@ -25,6 +34,7 @@ const Home = ({navigation}) => {
       style={styles.button}
 
       />
+      
       <Button 
       text={"Edit Profile"}
       onPress={()=>{
